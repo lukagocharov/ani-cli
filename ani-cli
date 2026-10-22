@@ -152,7 +152,7 @@ cleanup() {
 #shellcheck disable=SC2086
 hianime_curl() {
     _curl_status=0
-    _response="$($curl_exe -sL -A "$agent" --max-time 10 $cipher_flag \
+    _response="$($curl_exe -sL -A "$agent" --max-time 40 $cipher_flag \
         -w ' %{http_code}' "$@")" || _curl_status=$?
 
     _http_code=${_response##* }
